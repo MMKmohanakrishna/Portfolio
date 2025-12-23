@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Project One — Mohana Krishna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0b0b;--accent:#00d4ff;--muted:#9aa4af}
+    html,body{height:100%;}
+    body{margin:0;font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,var(--bg),#070707);color:#e6eef6;}
+    .container{max-width:1000px;margin:0 auto;padding:36px}
+    a{color:var(--accent)}
+    header{padding:18px 0}
+    .logo{font-weight:700;display:flex;align-items:center;gap:10px}
+    .logo .dot{width:10px;height:10px;background:var(--accent);border-radius:50%;box-shadow:0 0 12px var(--accent)}
+    .hero{display:flex;gap:28px;align-items:flex-start}
+    .project-hero{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .screenshot{width:100%;height:360px;background:linear-gradient(135deg,#061018,#0b1220);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;border:1px solid rgba(255,255,255,0.03)}
+    .screenshot img{width:100%;height:100%;object-fit:cover;object-position:50% 10%;border-radius:8px;display:block}
+    .meta{margin-top:16px;color:var(--muted)}
+    .back{display:inline-block;margin-top:18px;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:linear-gradient(90deg, rgba(0,212,255,0.04), rgba(0,212,255,0.02));color:var(--accent);font-weight:600}
+  /* Main content + Quick links column (widened for more space) */
+  .grid{display:grid;grid-template-columns:1fr 420px;gap:20px;margin-top:20px}
+  .card{background:rgba(255,255,255,0.02);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+  /* Ensure links inside cards wrap and look readable */
+  .card a{color:var(--accent);overflow-wrap:anywhere;word-break:break-word}
+  /* Utility to hide quick links while keeping markup for future use */
+  .hide-quick-links .repo-link,
+  .hide-quick-links .live-link{display:none}
+  /* Hide only the full-URL text while keeping action links visible */
+  .card .full-url{display:none}
+    @media (max-width:860px){.grid{grid-template-columns:1fr} .screenshot{height:220px}}
+
+    /* Floating profile button in corner to return to portfolio */
+    .corner-return{position:fixed;right:20px;bottom:600px;width:62px;height:62px;border-radius:50%;z-index:9999;display:block;box-shadow:0 12px 30px rgba(0,0,0,0.45);border:2px solid rgba(255,255,255,0.04);background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);transition:transform .18s ease,box-shadow .18s ease}
+    .corner-return img{width:100%;height:100%;object-fit:cover;object-position:50% 10%;border-radius:50%;display:block}
+    .corner-return:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 20px 48px rgba(0,0,0,0.6)}
+    .corner-return:focus{outline:3px solid rgba(0,212,255,0.14);outline-offset:4px}
+    @media (max-width:480px){.corner-return{right:12px;bottom:12px;width:48px;height:48px}}
+    /* Mobile tweaks: safe padding, image scaling, and full-width back button */
+    @media (max-width:768px){
+      .container{padding:20px}
+      body{line-height:1.6}
+      .grid{grid-template-columns:1fr}
+      .screenshot{height:220px}
+      .back{display:block;width:100%;min-height:44px;padding:12px 14px;margin-top:14px}
+    }
+    @media (max-width:480px){
+      .container{padding:16px}
+      body{line-height:1.65}
+      .screenshot{height:180px}
+      .screenshot img{max-width:100%;height:auto;object-fit:cover}
+      html,body{overflow-x:hidden}
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div class="logo"><span class="dot" aria-hidden></span> Mohana Krishna — Project One</div>
+  </header>
+
+  <main class="container">
+    <section class="project-hero">
+      <h1>Line MazeGenerator (FROM ECHOSTEP)</h1>
+      <p class="meta">A line-maze generator that creates printable and solvable mazes using adjustable dimensions, styles, and path algorithms.</p>
+      <div class="grid">
+        <div>
+          <div class="screenshot" role="img" aria-label="Project One screenshot">
+            <img src="Echo step [PIC].png" alt="Echo step screenshot for Project One">
+          </div>
+          <div class="card">
+            <h3>Overview</h3>
+            <p>This tool allows users to generate mazes of various sizes and shapes using intelligent algorithms like Recursive Backtracking ,Prim's Algorithm, Kruskal's Algorithm. It provides control over maze complexity, internal pathways, and solution paths, and also supports exporting the maze as an image, PDF, or code format for integration into applications or games.</p>
+            <h4>Features</h4>
+            <ul>
+              <li>Adjustable Maze Size: Set width and height (5 to 110 cells).</li>
+              <li>Start Point Selection: Define where the maze begins (Top, Bottom, etc.).</li>
+              <li>Advanced Path Bias Controls:
+                <ul>
+                  <li>Elitism (E): Controls how direct or shortest the main path is.</li>
+                  <li>River (R): Adjusts corridor vs. branch density.</li>
+                  <li>River (R): Adjusts corridor vs. branch density.</li>
+                </ul>
+              </li>
+
+              <li>Solution Visualization: Show or hide the correct path through the maze.</li>
+              <li>Export Options: Generate PDF, download maze code, or copy connectivity format for development use.</li>
+            </ul>
+            <p class="meta"><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+            <a class="back" href="index.html">← Back to portfolio</a>
+          </div>
+        </div>
+
+        <aside class="card">
+          <h3>Quick links</h3>
+          <p class="meta repo-link"><strong>Repo:</strong>
+            <a href="https://github.com/MMKmohanakrishna/LineMazeGenerator" target="_blank" rel="noopener noreferrer">View repo ↗</a>
+            <br><small class="full-url" style="color:var(--muted);">https://github.com/MMKmohanakrishna/LineMazeGenerator</small>
+          </p>
+
+          <p class="meta live-link"><strong>Live demo:</strong>
+            <a href="https://mmkmohanakrishna.github.io/LineMazeGenerator/mazegenerator.min.html" target="_blank" rel="noopener noreferrer">Open demo ↗</a>
+            <br><small class="full-url" style="color:var(--muted);">https://mmkmohanakrishna.github.io/LineMazeGenerator/mazegenerator.min.html</small>
+          </p>
+
+          <h4>Role</h4>
+          <p class="meta">Front-end developer — built UI components, animations and accessibility improvements.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container" style="padding:24px 0;color:#9aa4af">&copy; <span id="year">2025</span> Mohana Krishna</footer>
+
+  <!-- Corner profile button: clicking returns to index.html -->
+  <a href="index.html" class="corner-return" aria-label="Back to portfolio" title="Back to portfolio">
+    <img src="Profile-RB.png" alt="Back to portfolio">
+  </a>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
